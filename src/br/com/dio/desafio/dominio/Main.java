@@ -10,22 +10,50 @@ public class Main {
         curso.setTitulo("Java");
         curso.setDescricao("descrição curso java");
         curso.setCargaHoraria(8);
-        System.out.println(curso);
+
 
         Curso curso2 = new Curso();
+        curso2.setTitulo("JavaScript");
+        curso2.setDescricao("descrição curso javaScript");
+        curso2.setCargaHoraria(4);
 
-
-        curso.setTitulo("JavaScript");
-        curso.setDescricao("descrição curso javaScript");
-        curso.setCargaHoraria(4);
-        System.out.println(curso);
 
         Mentoria mentoria = new Mentoria();
-
         mentoria.setTitulo("Mentoria");
-        mentoria.setDescicao("Descrição da Mentoria");
+        mentoria.setDescricao("Descrição da Mentoria");
         mentoria.setData(LocalDate.now());
-        System.out.println(mentoria);
+
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("Bootcamp Java Developer");
+        bootcamp.setDescricao(" Descrição do bootcamp Java Developer");
+        bootcamp.getConteudos().add(curso);
+        bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(mentoria);
+
+        Dev devRodrigo = new Dev();
+        devRodrigo.setNome("Rodrigo");
+        System.out.println("Conteúdos inscritos Rodrigo: "+ devRodrigo.getConteudosInscritos());
+        devRodrigo.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos inscritos Rodrigo: "+ devRodrigo.getConteudosInscritos());
+        devRodrigo.progredir();
+        System.out.println("Conteúdos Concluídos Rodrigo: "+ devRodrigo.getConteudosConcluidos());
+        System.out.println("Conteúdos inscritos Rodrigo: "+ devRodrigo.getConteudosInscritos());
+
+
+        Dev devJoao = new Dev();
+        devJoao.setNome("João");
+        System.out.println("Conteúdos inscritos João: "+ devJoao.getConteudosInscritos());
+        devJoao.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos inscritos João: "+ devJoao.getConteudosInscritos());
+        devJoao.progredir();
+        System.out.println("Conteúdos Concluídos João: "+ devJoao.getConteudosConcluidos());
+        System.out.println("Conteúdos inscritos João: "+ devJoao.getConteudosInscritos());
+
+
+
+
+
+
 
 
 
